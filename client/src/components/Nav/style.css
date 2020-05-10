@@ -1,18 +1,21 @@
 .navBarBg {
-    background-color: lavender;
+    border-bottom: 15px darkslateblue solid;
+    background-color: white;
+    padding-bottom: 0;
 }
 .googleBooks {
-    padding: 10px 10px;
-    color: dimgray;
+    color: darkslateblue;
     font-size: 25px;
     font-weight: bold;
 }
 #navLink {
-    color: dimgray;
+    color: darkslateblue;
     font-weight: bold;
-    padding: 18px 10px;
+    padding-top: 15px;
+    padding-right: 2px;
     font-size: 18px;
 }
-#navLink:hover{
-    color: black;
+#book {
+    width: 10%;
+    height: 10%;
 }
