@@ -1,0 +1,18 @@
+.navBarBg {
+    background-color: lavender;
+}
+.googleBooks {
+    padding: 10px 10px;
+    color: dimgray;
+    font-size: 25px;
+    font-weight: bold;
+}
+#navLink {
+    color: dimgray;
+    font-weight: bold;
+    padding: 18px 10px;
+    font-size: 18px;
+}
+#navLink:hover{
+    color: black;
+}
