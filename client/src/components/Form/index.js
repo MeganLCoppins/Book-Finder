@@ -1,20 +1,32 @@
 import React from "react";
 
-function Form() {
+function Form({query, handleInputChange, handleFormSubmit}) {
   return (
-    <div class="input-group mb-3">
+    <div className="input-group mb-3"
+    style={{
+      backgroundColor: "lavender",
+      padding: "10%",
+      paddingTop: "3%",
+      paddingBottom: "20%",
+      marginBottom: "10%",
+    }}>
       <input
         type="text"
-        class="form-control"
+        id="Title"
+        name="query"
+        value={query}
+        onChange={handleInputChange}
+        className="form-control"
         placeholder="Book's Name"
         aria-label="Book Name"
         aria-describedby="button-addon2"
       />
-      <div class="input-group-append">
+      <div className="input-group-append">
         <button
-          class="btn btn-outline-secondary"
+          className="btn btn-outline-secondary"
           type="button"
           id="button-addon2"
+          onClick={handleFormSubmit}
         >
           Search
         </button>

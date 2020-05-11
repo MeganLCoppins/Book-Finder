@@ -11,7 +11,6 @@ function App() {
       <Nav />
       <div className="container">
       <Jumbotron />
-
         <Switch>
           <Route exact path="/" component={Home}/>
         </Switch>
