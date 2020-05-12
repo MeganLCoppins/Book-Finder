@@ -8,13 +8,18 @@ class Saved extends Component {
   };
 
   componentDidMount() {
-    this.getSavedBooks();
+    this.getSaved();
   }
 
-  getSavedBooks = () => {
-    API.getBook()
+  getSaved = () => {
+    API.getSaved()
       .then((res) => this.setState({ books: res.data }))
       .catch((err) => console.log(err));
+  };
+
+  handleDeleteBook = (id) => {
+      API.deleteBook(id)
+        .then(res => this.getSaved())
   };
 
   render() {
@@ -25,8 +30,8 @@ class Saved extends Component {
             background: "rgb(198, 224, 247)",
             color: "darkslateblue",
             textAlign: "center",
-            padding: "6%",
-            marginTop: "8%",
+            padding: "4%",
+            marginTop: "6%",
             marginBottom: "0",
             fontSize: "3.5rem",
           }}
@@ -38,6 +43,7 @@ class Saved extends Component {
             backgroundColor: "steelblue",
             padding: "10%",
             paddingTop: "3%",
+            marginBottom: "5%"
           }}
         >
           {this.state.books.length ? (

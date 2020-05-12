@@ -4,7 +4,7 @@ const googleRoutes = require("./google");
 
 // Book routes
 router.use("/books", bookRoutes);
-// Googel Routes
+// Google Routes
 router.use("/google", googleRoutes);
 
 router.use(function(req, res){
