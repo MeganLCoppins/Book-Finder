@@ -2,14 +2,7 @@ import React from "react";
 
 function Form({query, handleInputChange, handleFormSubmit}) {
   return (
-    <div className="input-group mb-3"
-    style={{
-      backgroundColor: "lavender",
-      padding: "10%",
-      paddingTop: "3%",
-      paddingBottom: "20%",
-      marginBottom: "10%",
-    }}>
+    <div className="input-group mb-3">
       <input
         type="text"
         id="Title"
@@ -27,6 +20,11 @@ function Form({query, handleInputChange, handleFormSubmit}) {
           type="button"
           id="button-addon2"
           onClick={handleFormSubmit}
+          style={{
+            backgroundColor: "rgb(198, 224, 247)",
+            borderColor: "purple",
+            color: "purple",
+          }}
         >
           Search
         </button>

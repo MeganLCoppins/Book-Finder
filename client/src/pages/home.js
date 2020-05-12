@@ -1,108 +1,68 @@
 import React, { Component } from "react";
 import Form from "../components/Form/index";
+import Card from "../components/Card/index";
 import API from "../utils/API";
 
 class Home extends Component {
   state = {
     books: [],
     query: "",
-    message: "Search For A Book To Begin!"
+    message: "Search For A Book To Begin!",
   };
 
-  handleInputChange = e => {
+  handleInputChange = (e) => {
     const { name, value } = e.target;
 
     this.setState({
-      [name]: value
-    })
-  }
+      [name]: value,
+    });
+  };
 
-  handleFormSubmit = e => {
+  handleFormSubmit = (e) => {
     e.preventDefault();
-      API.getBooks(this.state.query)
-        .then(res => this.setState({books : res.data})
-        )
-        .catch(() => 
-          this.setState({
-            books: [],
-            message: "No new books, try a different search"
-          })
-        );
-  }
+    API.getBooks(this.state.query)
+      .then((res) => this.setState({ books: res.data }))
+      .catch(() =>
+        this.setState({
+          books: [],
+          message: "No new books, try a different search",
+        })
+      );
+  };
 
-  render () {
-    return(
-    <div>
-        <Form 
-            handleInputChange={this.handleInputChange}
-            handleFormSubmit={this.handleFormSubmit}
-            query={this.state.query}
-        />
-        <div>
-          {this.state.books.length ? (
-              <div>
-                  {this.state.books.map(book => (
-                      <strong>
-                          {book.volumeInfo.title}
-                      </strong>
-                  ))}
-              </div>
-          ) : (
-              <h2>No Results to Display</h2>
-          )}
-      </div> 
-      {/* <div
-        className="input-group mb-3"
+  render() {
+    return (
+      <div
         style={{
           backgroundColor: "lavender",
           padding: "10%",
           paddingTop: "3%",
-          paddingBottom: "20%",
-          marginBottom: "10%",
         }}
       >
-        <input
-          onChange={handleInputChange}
-          name="query"
-          value={formObj.query}
-          type="text"
-          className="form-control"
-          placeholder="Book's Name"
-          aria-label="Book Name"
-          aria-describedby="button-addon2"
+        <Form
+          handleInputChange={this.handleInputChange}
+          handleFormSubmit={this.handleFormSubmit}
+          query={this.state.query}
         />
-        <div className="input-group-append">
-          <button
-            className="btn btn-outline-secondary"
-            type="button"
-            id="button-addon2"
-            disabled={!formObj}
-            onClick={handleFormSubmit}
-            style={{
-              backgroundColor: "lavender",
-              borderColor: "purple",
-              color: "purple",
-            }}
-          >
-            Search
-          </button>
+        {this.state.books.length ? (
+        <div>
+          {this.state.books.map(book => (
+            <Card
+              key={book.id}
+              image={book.volumeInfo.imageLinks.thumbnail}
+              title={book.volumeInfo.title}
+              subtitle={book.volumeInfo.subtitle}
+              description={book.volumeInfo.description}
+              authors={book.volumeInfo.authors.join(", ")}
+              link={book.volumeInfo.infoLink}
+            />
+          ))}
         </div>
+        ) : (
+          <h2>Search a Book to Display Results</h2>
+        )}
       </div>
-      <div>
-          {books.length ? (
-              <div>
-                  {books.map(book => (
-                      <strong>
-                          {book.volumeInfo.title}
-                      </strong>
-                  ))}
-              </div>
-          ) : (
-              <h2>No Results to Display</h2>
-          )}
-      </div> */}
-    </div>
     );
-  };
+  }
 }
 export default Home;
