@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav/index";
 import Home from "./pages/home";
-import Jumbotron from "./components/Jumbotron/index";
+import Saved from "./pages/saved";
+
 
 
 function App() {
@@ -10,9 +11,11 @@ function App() {
     <Router>
       <Nav />
       <div className="container">
-      <Jumbotron />
         <Switch>
           <Route exact path="/" component={Home}/>
+        </Switch>
+        <Switch>
+          <Route exact path="/saved" component={Saved}/>
         </Switch>
       </div>
     </Router>

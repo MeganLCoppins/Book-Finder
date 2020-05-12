@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Jumbotron from "../components/Jumbotron/index";
 import Form from "../components/Form/index";
 import Card from "../components/Card/index";
 import API from "../utils/API";
@@ -49,16 +50,20 @@ class Home extends Component {
   render() {
     return (
       <div
+      >
+        <Jumbotron />
+        <div
         style={{
           backgroundColor: "steelblue",
           padding: "10%",
           paddingTop: "3%",
         }}
-      >
+        >
         <Form
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit}
           query={this.state.query}
+          
         />
         {this.state.books.length ? (
         <div>
@@ -83,8 +88,9 @@ class Home extends Component {
           ))}
         </div>
         ) : (
-          <h2 style={{textAlign: "center", color: "white"}}>Search a Book to Display Results</h2>
+          <h2 style={{textAlign: "center", color: "white"}}>Search For a Book to Display Results</h2>
         )}
+        </div>
       </div>
     );
   }
