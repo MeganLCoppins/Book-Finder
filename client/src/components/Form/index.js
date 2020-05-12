@@ -21,9 +21,9 @@ function Form({query, handleInputChange, handleFormSubmit}) {
           id="button-addon2"
           onClick={handleFormSubmit}
           style={{
-            backgroundColor: "rgb(198, 224, 247)",
-            borderColor: "purple",
-            color: "purple",
+            backgroundColor: "darkslateblue",
+            borderColor: "lavender",
+            color: "lavender",
           }}
         >
           Search

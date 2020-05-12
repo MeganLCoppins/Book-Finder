@@ -6,8 +6,7 @@ import API from "../utils/API";
 class Home extends Component {
   state = {
     books: [],
-    query: "",
-    message: "Search For A Book To Begin!",
+    query: ""
   };
 
   handleInputChange = (e) => {
@@ -20,6 +19,10 @@ class Home extends Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
+    this.getBooks()
+  };
+
+  getBooks = () => {
     API.getBooks(this.state.query)
       .then((res) => this.setState({ books: res.data }))
       .catch(() =>
@@ -28,13 +31,26 @@ class Home extends Component {
           message: "No new books, try a different search",
         })
       );
+  }
+
+  handleSaveBook = (id) => {
+    const book = this.state.books.find(book => book.id === id);
+    API.saveBook({
+      googleId: book.id,
+      image: book.volumeInfo.imageLinks.thumbnail,
+      title: book.volumeInfo.title,
+      subtitle: book.volumeInfo.subtitle,
+      description: book.volumeInfo.description,
+      authors: book.volumeInfo.authors,
+      link: book.volumeInfo.infoLink
+    }).then(() => this.getBooks());
   };
 
   render() {
     return (
       <div
         style={{
-          backgroundColor: "lavender",
+          backgroundColor: "steelblue",
           padding: "10%",
           paddingTop: "3%",
         }}
@@ -55,11 +71,19 @@ class Home extends Component {
               description={book.volumeInfo.description}
               authors={book.volumeInfo.authors.join(", ")}
               link={book.volumeInfo.infoLink}
+              Button = { () => (
+                <button
+                onClick={() => this.handleSaveBook(book.id)}
+                style={{background: "steelblue", color:"white"}}
+                >
+                  Save Book
+                </button>
+              )}
             />
           ))}
         </div>
         ) : (
-          <h2>Search a Book to Display Results</h2>
+          <h2 style={{textAlign: "center", color: "white"}}>Search a Book to Display Results</h2>
         )}
       </div>
     );
