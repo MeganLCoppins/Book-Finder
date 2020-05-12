@@ -4,8 +4,8 @@ export default {
     getBooks: function(query) {
         return axios.get("/api/google", { params: { query: "title:" + query } });
     },
-    getBook: function(id) {
-        return axios.get("/api/books/" + id);
+    getBook: function() {
+        return axios.get("/api/books/");
     },
     saveBook: function(bookData) {
         return axios.post("/api/books", bookData);
