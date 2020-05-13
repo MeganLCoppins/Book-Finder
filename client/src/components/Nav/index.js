@@ -5,25 +5,36 @@ import "./style.css";
 
 function Nav() {
   return (
-    <nav className="navBarBg navbar navbar-expand-lg mb-2" style={{flexWrap: "nowrap"}}>
-      <ul className="nav">
-        <img src={Book} alt="open book" id="book"></img>
-        <li className="nav-item">
-          <Link to={"/"} className="nav-link googleBooks" >
-            Google Books
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link to={"/"} className="nav-link" id="navLink">
-            Search
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link to={"/saved"} className="nav-link" id="navLink">
-            Saved
-          </Link>
-        </li>
-      </ul>
+    <nav className="navbar navbar-expand-lg navbar-light  navBarBg">
+      <img src={Book} alt="open book" id="book"></img>
+      <Link to={"/"} className="nav-link googleBooks">
+              Book Finder
+      </Link>
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto nav">
+          <li className="nav-item">
+            <Link to={"/"} className="nav-link" id="navLink">
+              Search
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to={"/saved"} className="nav-link" id="navLink">
+              Saved
+            </Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 }
