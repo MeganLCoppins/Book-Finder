@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 function Card({ title, subtitle, authors, link, description, image, Button }) {
   return (
@@ -14,7 +15,7 @@ function Card({ title, subtitle, authors, link, description, image, Button }) {
             <strong>Authors: </strong>
             {authors}
         </h5>
-      <img src={image} className="card-img-top" alt={title} style={{width: "200px", marginLeft: "34%", marginTop: "3%"}}/>
+      <img src={image} className="card-img-top" id="cardImg" alt={title} style={{width: "200px", marginLeft: "34%", marginTop: "3%"}}/>
       <div className="card-body" 
       style={{textAlign: "center"}}
       >
