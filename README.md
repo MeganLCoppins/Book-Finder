@@ -18,12 +18,15 @@ To use this application go to the [deployed-link](#Deployed-Link)!
 ## Demonstration
 
 Home View 
+
 <img src="./client/src/assets/main.png" alt="main page">
 
 Search View
+
 <img src="./client/src/assets/search.png" alt="search view">
 
 Saved Books View
+
 <img src="./client/src/assets/saved.png" alt="saved view">
 
 ## Technologies
