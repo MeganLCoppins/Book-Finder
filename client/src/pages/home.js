@@ -7,8 +7,9 @@ import API from "../utils/API";
 class Home extends Component {
   state = {
     books: [],
-    query: ""
+    query: "",
   };
+
 
   handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -18,21 +19,21 @@ class Home extends Component {
     });
   };
 
+  getBooks = () => {
+    API.getBooks(this.state.query)
+      .then(res => 
+        this.setState({ books: res.data }))
+      .catch(() =>
+        this.setState({
+          books: []
+        })
+      );
+  }
+
   handleFormSubmit = (e) => {
     e.preventDefault();
     this.getBooks()
   };
-
-  getBooks = () => {
-    API.getBooks(this.state.query)
-      .then((res) => this.setState({ books: res.data }))
-      .catch(() =>
-        this.setState({
-          books: [],
-          message: "No new books, try a different search",
-        })
-      );
-  }
 
   handleSaveBook = (id) => {
     const book = this.state.books.find(book => book.id === id);

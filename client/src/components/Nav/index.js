@@ -5,7 +5,7 @@ import "./style.css";
 
 function Nav() {
   return (
-    <nav className="navBarBg navbar navbar-expand-lg mb-2">
+    <nav className="navBarBg navbar navbar-expand-lg mb-2" style={{flexWrap: "nowrap"}}>
       <ul className="nav">
         <img src={Book} alt="open book" id="book"></img>
         <li className="nav-item">

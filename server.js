@@ -11,6 +11,8 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+// Use both API and view routes
+app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
@@ -18,10 +20,6 @@ mongoose.connect(
   { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
 );
 
-// Use both API and view routes
-app.use(routes);
-
-
-app.listen(PORT, function() {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
-});
+app.listen(PORT, () =>
+  console.log(`🌎 ==> API server now on port ${PORT}!`)
+);

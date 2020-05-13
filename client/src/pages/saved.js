@@ -30,7 +30,7 @@ class Saved extends Component {
             background: "rgb(198, 224, 247)",
             color: "darkslateblue",
             textAlign: "center",
-            padding: "4%",
+            padding: "3%",
             marginTop: "6%",
             marginBottom: "0",
             fontSize: "3.5rem",
