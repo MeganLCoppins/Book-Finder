@@ -3,7 +3,7 @@ import "./style.css";
 
 function Card({ title, subtitle, authors, link, description, image, Button }) {
   return (
-    <div className="card" style={{backgroundColor: "rgb(198, 224, 247)", width: "70%", marginLeft: "15%"}}>
+    <div className="card">
         <h3 className="card-title" 
         style={{textAlign: "center", paddingTop: "3%", paddingBottom: "3%"}}
         >
@@ -15,7 +15,7 @@ function Card({ title, subtitle, authors, link, description, image, Button }) {
             <strong>Authors: </strong>
             {authors}
         </h5>
-      <img src={image} className="card-img-top" id="cardImg" alt={title} style={{width: "200px", marginLeft: "34%", marginTop: "3%"}}/>
+      <img src={image} className="card-img-top" id="cardImg" alt={title} />
       <div className="card-body" 
       style={{textAlign: "center"}}
       >
