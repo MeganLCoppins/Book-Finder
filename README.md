@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a MERN Google Books Search application. The application displays books based on the users search, allows users to save books, view their saved books, and delete a book from their saved books list. 
+The Book Finder app is a MERN application that utilizes React components, helper/util functions, React lifecycle methods to query and display books based on user searches. Node, Express, and MongoDB were also used to allow users to save searched books to review or purchase later.
 
 ## Table of Contents
 * [Usage](#Usage)
