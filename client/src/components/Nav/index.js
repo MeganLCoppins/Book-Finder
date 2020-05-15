@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Book from "../../assets/book-icon.png";
+import Book from "../../assets/book.jpeg";
+// import Book from "../../assets/book-icon.png";
 import "./style.css";
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light  navBarBg">
+    <nav className="navbar navbar-expand-lg navbar-dark  navBarBg">
       <img src={Book} alt="open book" id="book"></img>
       <Link to={"/"} className="nav-link googleBooks">
               Book Finder

@@ -10,7 +10,7 @@ function Card({ title, subtitle, authors, link, description, image, Button }) {
             {title}
         </h3>
         <h5 
-        style={{backgroundColor: "rgb(198, 224, 247)", textAlign: "center"}}
+        style={{backgroundColor: "lavender", textAlign: "center"}}
         >
             <strong>Authors: </strong>
             {authors}

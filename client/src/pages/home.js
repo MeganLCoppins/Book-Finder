@@ -55,9 +55,10 @@ class Home extends Component {
         <Jumbotron />
         <div
         style={{
-          backgroundColor: "steelblue",
+          backgroundColor: "rgba(245, 245, 245, 0.748)",
           padding: "10%",
           paddingTop: "3%",
+          marginBottom: "60%"
         }}
         >
         <Form
@@ -80,7 +81,7 @@ class Home extends Component {
               Button = { () => (
                 <button
                 onClick={() => this.handleSaveBook(book.id)}
-                style={{background: "steelblue", color:"white"}}
+                style={{background: "darkslateblue", color:"white"}}
                 >
                   Save Book
                 </button>
@@ -89,7 +90,7 @@ class Home extends Component {
           ))}
         </div>
         ) : (
-          <h2 style={{textAlign: "center", color: "white"}}>Search For a Book to Display Results</h2>
+          <h2 style={{textAlign: "center", color: "darkslateblue"}}>Search For a Book to Display Results</h2>
         )}
         </div>
       </div>

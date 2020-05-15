@@ -4,7 +4,8 @@
     margin-top: 3%;
 }
 .card {
-    background-color: rgb(198, 224, 247);
+    /* background-color: rgb(198, 224, 247); */
+    background-color: lavender;
     width: 70%;
     margin-left: 15%;
 }

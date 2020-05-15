@@ -1,6 +1,6 @@
 .navBarBg {
-    border-bottom: 15px darkslateblue solid;
-    background-color: white;
+    border-bottom: 5px black solid;
+    background-color: black;
     padding-bottom: 0;
 }
 .googleBooks {
@@ -18,6 +18,7 @@
 #book {
     width: 5%;
     height: 10%;
+     border-radius: 50%;
 }
 @media screen and (max-width: 640px) {
     #book {

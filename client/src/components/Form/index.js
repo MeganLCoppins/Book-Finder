@@ -13,6 +13,7 @@ function Form({query, handleInputChange, handleFormSubmit}) {
         placeholder="Book's Name"
         aria-label="Book Name"
         aria-describedby="button-addon2"
+        style={{border: "2px solid darkslateblue"}}
       />
       <div className="input-group-append">
         <button
@@ -22,7 +23,7 @@ function Form({query, handleInputChange, handleFormSubmit}) {
           onClick={handleFormSubmit}
           style={{
             backgroundColor: "darkslateblue",
-            borderColor: "lavender",
+            borderColor: "darkslateblue",
             color: "lavender",
           }}
         >

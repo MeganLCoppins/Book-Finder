@@ -27,10 +27,10 @@ class Saved extends Component {
       <div>
         <h1
           style={{
-            background: "rgb(198, 224, 247)",
+            background: "rgba(245, 245, 245, 0.748)",
             color: "darkslateblue",
             textAlign: "center",
-            padding: "3%",
+            padding: "2%",
             marginTop: "6%",
             marginBottom: "0",
             fontSize: "3.5rem",
@@ -40,10 +40,10 @@ class Saved extends Component {
         </h1>
         <div
           style={{
-            backgroundColor: "steelblue",
+            backgroundColor: "rgba(245, 245, 245, 0.748)",
             padding: "10%",
-            paddingTop: "3%",
-            marginBottom: "5%"
+            paddingTop: "2%",
+            marginBottom: "15%"
           }}
         >
           {this.state.books.length ? (
@@ -60,7 +60,7 @@ class Saved extends Component {
                   Button={() => (
                     <button
                       onClick={() => this.handleDeleteBook(book._id)}
-                      style={{ background: "steelblue", color: "white" }}
+                      style={{ background: "darkslateblue", color: "white" }}
                     >
                       Remove Book
                     </button>
