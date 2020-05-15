@@ -9,7 +9,7 @@ function Nav() {
     <nav className="navbar navbar-expand-lg navbar-dark  navBarBg">
       <img src={Book} alt="open book" id="book"></img>
       <Link to={"/"} className="nav-link googleBooks">
-              Book Finder
+        Book Finder
       </Link>
       <button
         className="navbar-toggler"

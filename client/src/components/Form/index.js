@@ -1,6 +1,6 @@
 import React from "react";
 
-function Form({query, handleInputChange, handleFormSubmit}) {
+function Form({ query, handleInputChange, handleFormSubmit }) {
   return (
     <div className="input-group mb-3">
       <input
@@ -13,7 +13,7 @@ function Form({query, handleInputChange, handleFormSubmit}) {
         placeholder="Book's Name"
         aria-label="Book Name"
         aria-describedby="button-addon2"
-        style={{border: "2px solid darkslateblue"}}
+        style={{ border: "2px solid darkslateblue" }}
       />
       <div className="input-group-append">
         <button

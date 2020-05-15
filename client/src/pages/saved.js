@@ -18,8 +18,7 @@ class Saved extends Component {
   };
 
   handleDeleteBook = (id) => {
-      API.deleteBook(id)
-        .then(res => this.getSaved())
+    API.deleteBook(id).then((res) => this.getSaved());
   };
 
   render() {
@@ -43,7 +42,7 @@ class Saved extends Component {
             backgroundColor: "rgba(245, 245, 245, 0.748)",
             padding: "10%",
             paddingTop: "2%",
-            marginBottom: "15%"
+            marginBottom: "15%",
           }}
         >
           {this.state.books.length ? (

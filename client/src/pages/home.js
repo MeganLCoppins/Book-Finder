@@ -10,7 +10,6 @@ class Home extends Component {
     query: "",
   };
 
-
   handleInputChange = (e) => {
     const { name, value } = e.target;
 
@@ -21,22 +20,21 @@ class Home extends Component {
 
   getBooks = () => {
     API.getBooks(this.state.query)
-      .then(res => 
-        this.setState({ books: res.data }))
+      .then((res) => this.setState({ books: res.data }))
       .catch(() =>
         this.setState({
-          books: []
+          books: [],
         })
       );
-  }
+  };
 
   handleFormSubmit = (e) => {
     e.preventDefault();
-    this.getBooks()
+    this.getBooks();
   };
 
   handleSaveBook = (id) => {
-    const book = this.state.books.find(book => book.id === id);
+    const book = this.state.books.find((book) => book.id === id);
     API.saveBook({
       googleId: book.id,
       image: book.volumeInfo.imageLinks.thumbnail,
@@ -44,54 +42,54 @@ class Home extends Component {
       subtitle: book.volumeInfo.subtitle,
       description: book.volumeInfo.description,
       authors: book.volumeInfo.authors,
-      link: book.volumeInfo.infoLink
+      link: book.volumeInfo.infoLink,
     }).then(() => this.getBooks());
   };
 
   render() {
     return (
-      <div
-      >
+      <div>
         <Jumbotron />
         <div
-        style={{
-          backgroundColor: "rgba(245, 245, 245, 0.748)",
-          padding: "10%",
-          paddingTop: "3%",
-          marginBottom: "60%"
-        }}
+          style={{
+            backgroundColor: "rgba(245, 245, 245, 0.748)",
+            padding: "10%",
+            paddingTop: "3%",
+            marginBottom: "60%",
+          }}
         >
-        <Form
-          handleInputChange={this.handleInputChange}
-          handleFormSubmit={this.handleFormSubmit}
-          query={this.state.query}
-          
-        />
-        {this.state.books.length ? (
-        <div>
-          {this.state.books.map(book => (
-            <Card
-              key={book.id}
-              image={book.volumeInfo.imageLinks.thumbnail}
-              title={book.volumeInfo.title}
-              subtitle={book.volumeInfo.subtitle}
-              description={book.volumeInfo.description}
-              authors={book.volumeInfo.authors.join(", ")}
-              link={book.volumeInfo.infoLink}
-              Button = { () => (
-                <button
-                onClick={() => this.handleSaveBook(book.id)}
-                style={{background: "darkslateblue", color:"white"}}
-                >
-                  Save Book
-                </button>
-              )}
-            />
-          ))}
-        </div>
-        ) : (
-          <h2 style={{textAlign: "center", color: "darkslateblue"}}>Search For a Book to Display Results</h2>
-        )}
+          <Form
+            handleInputChange={this.handleInputChange}
+            handleFormSubmit={this.handleFormSubmit}
+            query={this.state.query}
+          />
+          {this.state.books.length ? (
+            <div>
+              {this.state.books.map((book) => (
+                <Card
+                  key={book.id}
+                  image={book.volumeInfo.imageLinks.thumbnail}
+                  title={book.volumeInfo.title}
+                  subtitle={book.volumeInfo.subtitle}
+                  description={book.volumeInfo.description}
+                  authors={book.volumeInfo.authors.join(", ")}
+                  link={book.volumeInfo.infoLink}
+                  Button={() => (
+                    <button
+                      onClick={() => this.handleSaveBook(book.id)}
+                      style={{ background: "darkslateblue", color: "white" }}
+                    >
+                      Save Book
+                    </button>
+                  )}
+                />
+              ))}
+            </div>
+          ) : (
+            <h2 style={{ textAlign: "center", color: "darkslateblue" }}>
+              Search For a Book to Display Results
+            </h2>
+          )}
         </div>
       </div>
     );

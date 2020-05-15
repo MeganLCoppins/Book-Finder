@@ -1,27 +1,27 @@
 .navBarBg {
-    border-bottom: 5px black solid;
-    background-color: black;
-    padding-bottom: 0;
+  border-bottom: 5px black solid;
+  background-color: black;
+  padding-bottom: 0;
 }
 .googleBooks {
-    color: darkslateblue!important;
-    font-size: 25px!important;
-    font-weight: bold;
+  color: rgb(100, 85, 196) !important;
+  font-size: 25px !important;
+  font-weight: bold;
 }
 #navLink {
-    color: darkslateblue;
-    font-weight: bold;
-    padding-top: 15px;
-    padding-right: 2px;
-    font-size: 18px!important;
+  color: rgb(98, 83, 190);
+  font-weight: bold;
+  padding-top: 15px;
+  padding-right: 2px;
+  font-size: 18px !important;
 }
 #book {
-    width: 5%;
-    height: 10%;
-     border-radius: 50%;
+  width: 5%;
+  height: 10%;
+  border-radius: 50%;
 }
 @media screen and (max-width: 640px) {
-    #book {
-        width: 20%;
-    }
+  #book {
+    width: 20%;
+  }
 }
