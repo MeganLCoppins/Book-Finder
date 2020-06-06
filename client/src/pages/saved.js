@@ -1,27 +1,25 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../components/Card/index";
 import API from "../utils/API";
 
-class Saved extends Component {
-  state = {
-    books: [],
-  };
+function Saved() {
+  const [books, setBooks] = useState([]);
 
-  componentDidMount() {
-    this.getSaved();
-  }
+  useEffect(()=> {
+    getSaved();
+  }, []) 
 
-  getSaved = () => {
+
+  function getSaved() {
     API.getSaved()
-      .then((res) => this.setState({ books: res.data }))
+      .then((res) => setBooks(res.data ))
       .catch((err) => console.log(err));
   };
 
-  handleDeleteBook = (id) => {
-    API.deleteBook(id).then((res) => this.getSaved());
+  function handleDeleteBook(id) {
+    API.deleteBook(id).then((res) => getSaved());
   };
 
-  render() {
     return (
       <div>
         <h1
@@ -45,9 +43,9 @@ class Saved extends Component {
             marginBottom: "15%",
           }}
         >
-          {this.state.books.length ? (
+          {books.length ? (
             <div>
-              {this.state.books.map((book) => (
+              {books.map((book) => (
                 <Card
                   key={book._id}
                   image={book.image}
@@ -58,7 +56,7 @@ class Saved extends Component {
                   link={book.link}
                   Button={() => (
                     <button
-                      onClick={() => this.handleDeleteBook(book._id)}
+                      onClick={() => handleDeleteBook(book._id)}
                       style={{ background: "darkslateblue", color: "white" }}
                     >
                       Remove Book
@@ -75,6 +73,5 @@ class Saved extends Component {
         </div>
       </div>
     );
-  }
 }
 export default Saved;
